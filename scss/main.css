@@ -37,6 +37,10 @@ a {
   font-family: "Poppins", sans-serif;
 }
 
+.footer form .text {
+  font-family: "Open Sans", sans-serif;
+}
+
 .header {
   margin: 0 auto;
   padding: 1.5rem;
@@ -895,6 +899,8 @@ a {
   height: 3rem;
   border: none;
   border-radius: calc(0.25rem + 2px);
+  padding: 1rem;
+  font-size: 1rem;
 }
 .footer__container .content__news form .submit {
   background: hsl(322deg, 100%, 66%);
