@@ -1,0 +1,23 @@
+
+.container,
+.footer{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.home__text{
+    & h1{
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+.content__text{
+    & h3{
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+.advice{
+    & h4{
+        font-family: 'Poppins', sans-serif;
+    }
+}

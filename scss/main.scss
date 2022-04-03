@@ -1,0 +1,11 @@
+@use './base/reset';
+@use 'base/typo';
+@use './utilities/variables';
+@use './layout/header';
+@use './views/home';
+@use './layout/footer';
+
+
+.container{
+    color: variables.$very-dark-cyan;
+}

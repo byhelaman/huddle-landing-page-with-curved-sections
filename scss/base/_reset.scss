@@ -1,0 +1,21 @@
+*, 
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-size: 1rem;
+}
+
+img{
+    display: block;
+    width: 100%;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}

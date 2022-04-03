@@ -1,0 +1,437 @@
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+.home{
+    margin: calc(6rem - 5px) 0 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__text{
+        padding: 0 2rem;
+        text-align: center;
+
+        & h1{
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 2.25rem;
+
+            @include mixins.media-up(sm){
+                font-size: 2rem;
+                line-height: 2.5rem;
+            }
+
+            @include mixins.media-up(xl){
+                font-size: 2.5rem;
+                line-height: 3.75rem;
+            }
+
+            @include mixins.media-up(xxl){
+                font-size: 3rem;
+                line-height: 4.5rem;
+            }
+        }
+        
+        & p{
+            margin: calc(1.25rem + 1px) auto 3rem;
+            font-size: 0.875rem;
+            line-height: calc(1.25rem + 1px);
+
+            max-width: 36.75rem;
+
+            @include mixins.media-up(sm){
+                margin-top: calc(1.25rem + 2px);
+                font-size: 1rem;
+                line-height: 1.5rem;
+            }
+
+            @include mixins.media-up(xl){
+                font-size: 1.25rem;
+                line-height: calc(1.75rem + 2px);
+            }
+        }
+    }
+
+    &__button{
+        @include mixins.button;
+        margin-bottom: calc(6.25rem + 2px);
+
+        @include mixins.media-up(sm){
+            margin-bottom: calc(6.75rem + 2px);
+        }
+    }
+
+    &__image{
+        width: 80.54%;
+        max-width: calc(65rem - 4px);
+    }
+
+    &__stats{
+        margin: calc(7.5rem + 1px) 0 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: calc(6rem - 1px);
+
+        @include mixins.media-up(sm){
+            margin-top: calc(7.5rem - 1px);
+            flex-direction: row;
+        }
+
+        @include mixins.media-up(md){
+            gap: 12rem;
+        }
+
+        @include mixins.media-up(xl){
+            gap: 21.25rem;
+        }
+
+        &--communities{
+            & img{
+                margin-left: 1px;
+                width: calc(1.75rem + 2px);
+
+                @include mixins.media-up(xl){
+                    margin-left: 3px;
+                    width: calc(3rem - 1px);
+                }
+            }
+
+            & h2{
+                margin: 0 0 calc(0.5rem - 2px);
+                font-size: 3.75rem;
+                font-weight: 700;
+
+                @include mixins.media-up(xl){
+                    margin: -4px 0 calc(0.5rem + 2px);
+                    font-size: 6rem;
+                    letter-spacing: 0;
+                }
+            }
+
+            & span{
+                margin-left: 1px;
+                font-size: 1rem;
+                letter-spacing: -0.025em;
+
+                @include mixins.media-up(xl){
+                    margin-left: 4px;
+                    font-size: 1.5rem;
+                    letter-spacing: 0;
+                }
+            }
+        }
+
+        &--messages{
+            & img{
+                margin-left: 0.25rem;
+                width: 1.5rem;
+
+                @include mixins.media-up(sm){
+                    width: calc(1.75rem + 2px);
+                }
+
+                @include mixins.media-up(xl){
+                    margin: 3px 0 0 calc(0.5rem + 2px);
+                    width: 2.5rem;
+                }
+            }
+
+            & h2{
+                margin: 0 0 calc(0.25rem - 1px);
+                font-size: calc(3.25rem + 2px);
+                font-weight: 700;
+                letter-spacing: -0.015em;
+
+                @include mixins.media-up(sm){
+                    margin-top: 1.67px;
+                    font-size: 3.75rem;
+                    margin-bottom: calc(0.5rem - 2px);
+                }
+
+                @include mixins.media-up(xl){
+                    margin-bottom: calc(0.5rem + 2px);
+                    font-size: 6rem;
+                    letter-spacing: 0;
+                }
+            }
+
+            & span{
+                margin-left: 1.5rem;
+                font-size: calc(0.75rem + 2px);
+                letter-spacing: -0.025em;
+
+                @include mixins.media-up(sm){
+                    font-size: 1rem;
+                }
+
+                @include mixins.media-up(xl){
+                    margin-left: calc(3rem - 3px);
+                    font-size: 1.5rem;
+                    letter-spacing: 0;
+                }
+            }
+        }
+    }
+
+    @include mixins.media-up(sm){
+        margin-bottom: 8.5rem;
+    }
+
+    @include mixins.media-up(xl){
+        margin-top: 8.75rem;
+    }
+
+    @include mixins.media-up(xxl){
+        margin-top: calc(12.5rem + 6px);
+    }
+}
+
+.features{
+    &__one{
+        &::before{
+            content: '';
+            @include mixins.wave(url(../images/bg-section-top-mobile-1.svg), 112px);
+
+            @include mixins.media-up(lg){
+                @include mixins.wave(url(../images/bg-section-top-desktop-1.svg), 165px);            
+            }
+        }
+
+        & .content-area{
+            background: variables.$very-pale-blue;
+
+            display: flex;
+            justify-content: center;
+
+            padding: calc(5rem + 1px) 1.75rem calc(3.25rem + 2px);
+
+            & .content{
+                display: grid;
+                justify-items: center;
+                gap: 4.75rem;
+                
+                &__image{
+                    width: 81.2%;
+                    
+                    @include mixins.media-up(md){
+                        width: 100%;
+                        max-width: calc(32.5rem - 2px);
+                    }
+
+                    @include mixins.media-up(lg){
+                        grid-column: 2/ 3;
+                        grid-row: 1/2;
+                    }
+                }
+
+                &__text{
+                    @include mixins.content;
+
+                    @include mixins.media-up(lg){
+                        grid-column: 1/ 2;
+                        grid-row: 1/2;
+                    }
+                }
+
+                @include mixins.media-up(lg){
+                    align-items: center;
+                }
+
+                @include mixins.media-up(xl){
+                    gap: calc(7.5rem + 2px);
+                }
+            }
+
+            @include mixins.media-up(lg){
+                padding: 3rem;
+            }
+
+            @include mixins.media-up(xl){
+                padding: calc(4rem + 3px) calc(9.25rem + 2px) calc(2.75rem + 1px) calc(8rem + 2px);
+            }
+        }
+
+        &::after{
+            content: '';
+            @include mixins.wave(url(../images/bg-section-bottom-mobile-1.svg), 52px);
+
+            @include mixins.media-up(lg){
+                @include mixins.wave(url(../images/bg-section-bottom-desktop-1.svg), 139px);            
+            }
+        }
+    }
+
+    &__two{
+        display: flex;
+        justify-content: center;
+
+        margin: 8.75rem 0 7.5rem;
+        padding: 0 1.75rem;
+        
+        & .content{
+            display: grid;
+            justify-items: center;
+            gap: calc(5.25rem + 3px);
+
+            &__image{
+                width: 83.7%;
+
+                @include mixins.media-up(md){
+                    width: 100%;
+                    max-width: calc(33rem + 2px);
+                }
+
+                @include mixins.media-up(lg){
+                    grid-column: 1/ 2;
+                    grid-row: 1/2;
+                }
+            }
+
+            &__text{
+                @include mixins.content;
+
+                @include mixins.media-up(lg){
+                    grid-column: 2/ 3;
+                    grid-row: 1/2;
+                }
+            }
+
+            @include mixins.media-up(lg){
+                align-items: center;
+            }
+
+            @include mixins.media-up(xxl){
+                gap: calc(8.25rem + 2px);
+            }
+        }
+
+        @include mixins.media-up(lg){
+            padding: 0 3rem;
+        }
+
+        @include mixins.media-up(xxl){
+            padding: 0 7.5rem 0 8.5rem;
+            margin: calc(12.25rem - 1px) 0 7rem;
+        }
+    }
+
+    &__three{
+        &::before{
+            content: '';
+            @include mixins.wave(url(../images/bg-section-top-mobile-2.svg), 103px);
+
+            @include mixins.media-up(lg){
+                @include mixins.wave(url(../images/bg-section-top-desktop-2.svg), 156px);            
+            }
+        }
+
+        & .content-area{
+            background: variables.$very-pale-blue;
+
+            display: flex;
+            justify-content: center;
+
+            padding: 1rem 1.75rem 7.25rem;
+
+            & .content{
+                display: grid;
+                justify-items: center;
+                gap: calc(5.25rem - 1px);
+
+                &__image{
+                    width: 83.7%;
+                    
+                    @include mixins.media-up(md){
+                        width: 100%;
+                        max-width: 33.25rem;
+                    }
+
+                    @include mixins.media-up(lg){
+                        grid-column: 2/ 3;
+                        grid-row: 1/2;
+                    }
+                }
+
+                &__text{
+                    @include mixins.content;
+
+                    @include mixins.media-up(lg){
+                        grid-column: 1/ 2;
+                        grid-row: 1/2;
+                    }
+                }
+
+                @include mixins.media-up(lg){
+                    align-items: center;
+                }
+
+                @include mixins.media-up(xl){
+                    gap: calc(8.5rem - 2px);
+                }
+            }
+
+            @include mixins.media-up(lg){
+                padding: 3rem;
+            }
+
+            @include mixins.media-up(xl){
+                padding: calc(2.5rem + 2px) calc(8.5rem - 2px) 2.5rem 7.5rem;
+            }
+        }
+
+        &::after{
+            content: '';
+            @include mixins.wave(url(../images/bg-section-bottom-mobile-2.svg), 101px);
+
+            @include mixins.media-up(lg){
+                @include mixins.wave(url(../images/bg-section-bottom-desktop-2.svg), 139px);            
+            }
+        }
+    }
+}
+
+.advice{
+    display: flex;
+    justify-content: center;
+
+    margin: calc(4rem + 2px) 0 15.75rem;
+    padding: 0 1.75rem;
+    
+    & .content{
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+
+        & h4{
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+
+            @include mixins.media-up(sm){
+                font-size: 2rem;
+            }
+
+            @include mixins.media-up(xl){
+                font-size: 2.5rem;
+            }
+        }
+
+        & a{
+            @include mixins.button;
+        }
+
+        @include mixins.media-up(xl){
+            gap:  calc(2.5rem -  2px);
+        }
+    }
+
+    @include mixins.media-up(sm){
+        margin: calc(10rem + 3px) 0 11.25rem;
+    }
+}

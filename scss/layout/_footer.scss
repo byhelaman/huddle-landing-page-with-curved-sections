@@ -1,0 +1,219 @@
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+.footer{
+    &::before{
+        content: '';
+        @include mixins.wave(url(../images/bg-footer-top-mobile.svg), 52px);
+
+        @include mixins.media-up(lg){
+            @include mixins.wave(url(../images/bg-footer-top-desktop.svg), 158px);            
+        }
+    }
+
+    &__container{
+        background: variables.$very-dark-cyan;
+        color: #fff;
+
+        & .content{
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            gap: calc(6.25rem + 2px);
+
+            padding: calc(3.5rem + 2px) 1.75rem 2.25rem;
+
+            &__info{
+                max-width: 20rem;
+
+                & img{
+                    width: 12.5rem;
+
+                    @include mixins.media-up(xxl){
+                        width: 15rem;
+                    }
+                }
+
+                & p{
+                    margin: calc(1rem - 0.5px) 0 0;
+                    font-size: calc(0.75rem + 2px);
+                    font-weight: 600;
+                    line-height: 1.5rem;
+
+                    @include mixins.media-up(xxl){
+                        margin-top: calc(1.5rem + 2px);
+                    }
+                }
+
+                & .contact{
+                    margin: 2.5rem 0 calc(3rem + 2px);
+                    display: flex;
+                    flex-direction: column;
+                    gap: calc(1rem + 2px);
+
+                    &__phone{
+                        display: grid;
+                        grid-template-columns: 1.5rem 1fr;
+                        gap: 1rem;
+
+                        & img{
+                            width: 100%;
+                            padding: 3px;
+                            grid-column: 1/2;
+                        }
+
+                        & span{
+                            font-size: calc(0.75rem + 2px);
+                            grid-column: 2/3;
+
+                            @include mixins.media-up(xxl){
+                                font-size: 1rem;
+                            }
+                        }
+
+                        @include mixins.media-up(xxl){
+                            gap: calc(1rem + 2px);
+                        }
+                    }
+
+                    &__email{
+                        display: grid;
+                        grid-template-columns: 1.5rem 1fr;
+                        gap: 1rem;
+
+                        & img{
+                            width: 100%;
+                            padding: 2px;
+                            grid-column: 1/2;
+                        }
+
+                        & span{
+                            font-size: calc(0.75rem + 2px);
+                            grid-column: 2/3;
+
+                            @include mixins.media-up(xxl){
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+
+                    @include mixins.media-up(xxl){
+                        margin: calc(1.5rem + 1px) 0 5rem;
+                    }
+                }
+
+                & .social-media{
+                    & ul{
+                        margin: 0;
+                        padding: 0;
+                        list-style: none;
+
+                        display: flex;
+                        gap: calc(1rem + 1px);
+
+                        & a{
+                            font-size: 1.5rem;
+
+                            & :hover{
+                                color: variables.$soft-blue;
+                            }
+
+                            @include mixins.media-up(xxl){
+                                font-size: 2rem;
+                            }
+                        }
+
+                        @include mixins.media-up(xxl){
+                            gap: 1.5rem;
+                        }
+                    }
+                }
+            }
+
+            &__news{
+                width: 100%;
+                max-width: 32.5rem;
+
+                & h5{
+                    margin: 0;
+                    text-transform: uppercase;
+                    font-size: 1.25rem;
+
+                    @include mixins.media-up(xxl){
+                        font-size: 1.5rem;
+                    }
+                }
+
+                & p{
+                    max-width: 22rem;
+                    margin: calc(1rem + 1px) 0 2rem;
+                    font-size: calc(0.75rem + 2px);
+                    font-weight: 600;
+                    line-height: 1.5rem;
+
+                    @include mixins.media-up(xxl){
+                        margin: calc(1rem + 2px) 0 2.5rem;
+                    }
+                }
+
+                & form{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    & .text{
+                        width: 100%;
+                        max-width: 20rem;
+                        height: 3rem;
+                        border: none;
+                        border-radius: calc(0.25rem + 2px);
+                    }
+                    
+                    & .submit{
+                        background: variables.$pink;
+                        color: #fff;
+
+                        width: 10rem;
+                        height: calc(3rem + 2px);
+                        border: none;
+                        border-radius: calc(0.25rem + 2px);
+
+                        font-size: 1rem;
+                        font-weight: 600;
+
+                        &:hover{
+                            background: variables.$light-pink;
+                        }
+
+                        @include mixins.media-up(xl){
+                            height: 3rem;
+                        }
+                    }
+
+                    @include mixins.media-up(md){
+                        flex-direction: row;
+                    }
+
+                    @include mixins.media-up(xxl){
+                        gap: 2.5rem;
+                    }
+                }
+            }
+
+            @include mixins.media-up(md){
+                padding-left: 3rem;
+            }
+
+            @include mixins.media-up(xl){
+                flex-direction: row;
+                padding: 7.5rem 0 6.25rem;
+                gap: 10rem;
+            }
+
+            @include mixins.media-up(xxl){
+                gap: 22.5rem;
+            }
+
+        }
+    }
+}

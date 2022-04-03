@@ -1,0 +1,80 @@
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+.header{
+    margin: 0 auto;
+    padding: 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 81rem;
+
+    &__logo{
+        width: 6rem;
+        // // width: 29.36%;
+        // max-width: 15rem;
+
+        @include mixins.media-up(sm){
+            width: 7.5rem;
+        }
+
+        @include mixins.media-up(md){
+            width: 8.5rem;
+        }
+
+        @include mixins.media-up(xl){
+            width: 10rem;
+        }
+
+        @include mixins.media-up(xxl){
+            width: 15rem;
+        }
+    }
+
+    &__button{
+        color: variables.$pink;
+        font-weight: 600;
+        font-size: calc(0.5rem + 1px);
+
+        border: 1px solid variables.$pink;
+        border-radius: 50px;
+
+        padding: 0.285rem 1.08rem;
+
+        &:hover{
+            color: variables.$light-pink;
+            border: 1px solid variables.$light-pink;
+        }
+        
+        @include mixins.media-up(sm){
+            font-size: 0.75rem;
+            padding: 0.5rem 1.5rem;    
+        }
+
+        @include mixins.media-up(xl){
+            font-size: 1rem;
+            padding: 0.5rem 1.75rem;    
+        }
+    }
+
+    @include mixins.media-up(sm){
+        padding-top: 2.5rem; 
+    }
+
+    @include mixins.media-up(xl){
+        padding-top: 3.5rem;
+    }
+
+    @include mixins.media-up(xxl){
+        margin: 0 calc(3.75rem + 3px) 0 5rem;
+        padding-top: calc(4.75rem + 2px);
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    @media (min-width: 1441px) {
+        margin: 0 auto;
+    }
+}

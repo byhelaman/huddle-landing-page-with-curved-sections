@@ -1,0 +1,80 @@
+@use '../utilities/variables';
+
+@mixin wave($image, $size) {
+    background-image: $image;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: $size;
+
+    display: block;
+}
+
+@mixin button{
+    background: variables.$pink;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 50px;
+    
+    padding: 0.72rem 2.61rem;
+
+    &:hover{
+        background: variables.$light-pink;
+    }
+
+    @include media-up(sm){
+        font-size: calc(0.75rem + 2px);
+        padding: 0.85rem 3rem;
+    }
+
+    @include media-up(xl){
+        font-size: 1.25rem;
+        padding: 1.66rem 6.43rem;
+    }
+}
+
+@mixin content {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: calc(0.75rem + 2px);
+
+    & h3{
+        margin: 0;
+        font-weight: 700;
+        font-size: 1.25rem;
+
+        @include media-up(lg){
+            font-size: 1.5rem;
+        }
+
+        @include media-up(xl){
+            font-size: 2.5rem;
+        }
+    }
+
+    & p{
+        max-width: 32.5rem;
+        margin: 0;
+        font-size: calc(0.75rem + 2px);
+        line-height: calc(1.25rem + 1px);
+
+        @include media-up(lg){
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+    }
+
+    @include media-up(lg){
+        text-align: left;
+        gap: calc(1.25rem + 1px);
+    }
+}
+
+
+@mixin media-up($breakpoint){
+    @media screen and (min-width: map-get(variables.$breakpoints, $breakpoint)) {
+        @content;
+    }
+}
