@@ -24,7 +24,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: https://github.com/byhelaman/huddle-landing-page-with-curved-sections
-- Live Site URL: 
+- Live Site URL: https://gregarious-lily-5506b8.netlify.app
 
 ## My process
 
