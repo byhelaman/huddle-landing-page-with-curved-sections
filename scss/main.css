@@ -932,7 +932,7 @@ a {
 @media screen and (min-width: 1200px) {
   .footer__container .content {
     flex-direction: row;
-    padding: 7.5rem 0 6.25rem;
+    padding: 7.5rem 0 calc(6rem - 6px);
     gap: 10rem;
   }
 }
